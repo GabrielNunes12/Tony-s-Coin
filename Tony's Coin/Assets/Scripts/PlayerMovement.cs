@@ -45,4 +45,12 @@ public class PlayerMovement : MonoBehaviour
             _jumpCooldownSec = 0f;
         }
     }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag == "Walls")
+        {
+            _playerRb.AddForce(new Vector3(0, 0.20f), ForceMode.Impulse);
+        }
+    }
 }
