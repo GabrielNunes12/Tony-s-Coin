@@ -50,7 +50,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Walls")
         {
-            _playerRb.AddForce(new Vector3(0, 0.20f), ForceMode.Impulse);
+            _playerRb.AddForce(new Vector3(0, 0.40f), ForceMode.Impulse);
         }
+    }
+
+    public Transform GetPlayerPosition()
+    {
+        return gameObject.transform;
     }
 }
